@@ -48,7 +48,7 @@ src
 ### 1. Clone Repository
 
 ```
-git clone <your-github-repo-url>
+git clone https://github.com/akanksha-18/User_Crud.git
 cd project-folder
 ```
 
