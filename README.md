@@ -1,79 +1,153 @@
 # User Management CRUD App (React)
 
-A simple React-based CRUD (Create, Read, Update, Delete) application to manage user data. The application uses a schema-driven form architecture that allows new fields to be added with minimal code changes.
+A simple React-based CRUD (Create, Read, Update, Delete) application to manage user data using a schema-driven form architecture. New fields can be added with minimal code changes.
 
 ---
 
-## 🚀 Features
+## Features
 
-- Create new users  
-- View all users  
-- Update existing users  
-- Delete users  
+- Create user  
+- Read users  
+- Update user  
+- Delete user  
 - Required field validation  
-- Dynamic form rendering using schema  
-- Clean and responsive UI  
-- Mock backend using JSON Server  
+- Schema-driven dynamic form  
+- Clean UI  
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
-- React (Vite)  
-- Axios  
-- JSON Server  
-- CSS  
+- React (Vite)
+- Axios
+- JSON Server
+- CSS
 
 ---
 
-## 📂 Folder Structure
+## Folder Structure
 
+```
 src
-│── api
-│ └── userApi.js
-│── components
-│ ├── UserForm.jsx
-│ └── UserList.jsx
-│── config
-│ └── userFormSchema.js
-│── App.jsx
-│── main.jsx
-│── index.css
+├── api
+│   └── userApi.js
+├── components
+│   ├── UserForm.jsx
+│   └── UserList.jsx
+├── config
+│   └── userFormSchema.js
+├── App.jsx
+├── main.jsx
+├── index.css
+```
 
-## ⚙️ Setup Instructions
+---
+
+## Setup Instructions
 
 ### 1. Clone Repository
 
-```bash
+```
 git clone <your-github-repo-url>
 cd project-folder
+```
 
-2. Install Dependencies
+### 2. Install Dependencies
+
+```
 npm install
+```
 
-3. Create Mock Database
+### 3. Create Database File
 
-Create a file named db.json in the project root:
+Create file **db.json** in root folder:
 
+```
 {
   "users": []
 }
+```
 
-4. Start Mock Backend (JSON Server)
+### 4. Run Backend (JSON Server)
+
+```
 npx json-server --watch db.json --port 3001
+```
 
+### 5. Run Frontend
 
-Backend URL:
+Open new terminal:
 
-http://localhost:3001/users
-
-5. Start Frontend Application
-
-Open another terminal and run:
-
+```
 npm run dev
+```
 
+---
 
-Frontend URL:
+## API Endpoints
 
-http://localhost:5173
+| Method | Endpoint | Description |
+|------|---------|-------------|
+| GET | /users | Get all users |
+| POST | /users | Create user |
+| PUT | /users/:id | Update user |
+| DELETE | /users/:id | Delete user |
+
+---
+
+## How To Add New Field
+
+Open file:
+
+```
+src/config/userFormSchema.js
+```
+
+Add:
+
+```
+{ name: "dob", label: "Date of Birth", type: "date", required: false }
+```
+
+No other changes needed.
+
+---
+
+## Design Decisions
+
+- Schema-based form rendering  
+- Central API file  
+- Reusable components  
+- Simple CSS  
+
+---
+
+## Deployment
+
+Frontend can be deployed on:
+
+- Netlify  
+- Vercel  
+- GitHub Pages  
+
+---
+
+## Assumptions
+
+- JSON Server used only for mock backend  
+- Frontend focused project  
+
+---
+
+## Future Improvements
+
+- Toast notifications  
+- Pagination  
+- Search  
+- TypeScript  
+
+---
+
+## Author
+
+Akanksha Dubey
